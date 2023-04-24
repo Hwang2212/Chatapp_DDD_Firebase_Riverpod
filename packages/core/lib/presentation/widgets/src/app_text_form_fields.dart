@@ -27,7 +27,6 @@ class AppTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
     TextTheme textTheme = Theme.of(context).textTheme;
     return TextFormField(
       // initialValue: initialValue ?? "",
@@ -36,14 +35,12 @@ class AppTextFormField extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       textInputAction: textInputAction,
-      style:
-          textTheme.bodyMedium?.copyWith(color: colorScheme.primaryContainer),
+      style: textTheme.bodyMedium?.copyWith(color: AppColors.black),
       decoration: InputDecoration(
           prefixIcon: prefixIcon,
           labelText: labelText,
           focusedBorder: const OutlineInputBorder(),
           focusColor: AppColors.darkBlue,
-          
           border: const OutlineInputBorder()),
       controller: textEditingController,
       keyboardType: isNumber ? TextInputType.phone : TextInputType.text,

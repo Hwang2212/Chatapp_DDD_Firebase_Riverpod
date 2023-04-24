@@ -39,6 +39,11 @@ class AddMessageFieldState extends ConsumerState<AddMessageField> {
             Expanded(
               child: AppTextFormField(
                 textEditingController: addMessageTEC,
+                onTap: () {
+                  ref
+                      .watch(emojiShowingProvider.notifier)
+                      .update((state) => false);
+                },
               ),
             ),
             AppIconButton(

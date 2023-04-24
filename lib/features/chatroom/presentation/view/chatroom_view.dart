@@ -30,6 +30,7 @@ class ChatroomViewState extends ConsumerState<ChatroomView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
+      extendBodyBehindAppBar: true,
       appBar: mainAppBar(),
       body: Stack(
         children: [
@@ -94,7 +95,7 @@ class ChatroomViewState extends ConsumerState<ChatroomView> {
         AddMessageField(
           addMessageTEC: _messageTEC,
           onTapButton: () async {
-            ref.watch(emojiShowingProvider.notifier).update((state) => !state);
+            ref.watch(emojiShowingProvider.notifier).update((state) => false);
             String? fromUser = ref.watch(sharedPrefProvider).getUserUid();
             String toUser = widget.chatroomId!
                 .split("_")
@@ -106,9 +107,9 @@ class ChatroomViewState extends ConsumerState<ChatroomView> {
           },
         ),
         Offstage(
-          offstage: ref.watch(emojiShowingProvider),
+          offstage: !ref.watch(emojiShowingProvider),
           child: SizedBox(
-            height: 250,
+            height: 200,
             child: EmojiPicker(
               onEmojiSelected: (category, emoji) {
                 // Do something when emoji is tapped (optional)
@@ -156,7 +157,8 @@ class ChatroomViewState extends ConsumerState<ChatroomView> {
   Widget buildChatList() {
     final chatcontent =
         ref.watch(chatContentStreamProvider(widget.chatroomId!));
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.only(top: 20),
       height: ScreenUtils.idealScreenHeight,
       child: chatcontent.when(
         data: (list) {
