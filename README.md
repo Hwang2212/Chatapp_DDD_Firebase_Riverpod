@@ -1,9 +1,9 @@
 # chatti_v2
-<img src="/screenshots/Onboarding1.png" alt="Onboarding" width="300" height="500" title="Onboarding">
-<!-- ![Alt text](/screenshots/Onboarding1.png "Onboarding!") -->
-# firebase_chat_v2
 
 Firebase Chat App Built with MVVM, GoRouter, Firebase, and Firestore
+<img src="/screenshots/Onboarding1.png" alt="Onboarding" width="300" height="600" title="Onboarding"><img src="/screenshots/Onboarding1.png" alt="Onboarding" width="300" height="600" title="Onboarding">
+
+
 
 
 ## Getting Started
