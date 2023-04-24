@@ -1,5 +1,5 @@
 # chatti_v2
-
+![Alt text](/screenshots/Onboarding1..png "Onboarding!")
 # firebase_chat_v2
 
 Firebase Chat App Built with MVVM, GoRouter, Firebase, and Firestore
